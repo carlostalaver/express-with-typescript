@@ -1,0 +1,5 @@
+  "scripts": {
+    "ts": "tsc -w",    // para actualizar los cambios en typescript
+    "dev": "nodemon ./build/server.js",  // para que el servidor se reinice solo
+    "start": "tsc & node ./build/serve.js"  // solo cuando se vaya poner en produccion.
+  },
