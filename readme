@@ -3,3 +3,22 @@
     "dev": "nodemon ./build/server.js",  // para que el servidor se reinice solo
     "start": "tsc & node ./build/serve.js"  // solo cuando se vaya poner en produccion.
   },
+
+
+  ALGUNAS CONSIDERACIONES
+  trabajando con async await, recordar que node NO ESPERA por tareas que toman que toman tiempo,
+  node tomas las tareas y las delega, cuando se completan node las pilla nuevamente
+
+  async function requestHandler(req, res) {
+    try{
+      const user = await User.findById(req.body.userId); //  Esta tarea requiere tiempo para ejecutarse, por ello el await
+      const tasks = await Tasks.findById(user.tasksId);  //  Esta tarea requiere tiempo para ejecutarse, por ello el await
+      tasks.completed = true;
+      await tasks.save();                                //  Esta tarea requiere tiempo para ejecutarse, por ello el await 
+      res.send('Tasks completed');
+    }
+    catch(e) {
+      // si cualquiera de las tareas anteriores produce un error lo capturo aqui.
+      res.send('ocurrio un error', e);
+    }
+  }
