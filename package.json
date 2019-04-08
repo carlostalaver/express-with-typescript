@@ -6,7 +6,7 @@
   "scripts": {
     "ts": "tsc -w",
     "dev": "nodemon ./build/server.js",
-    "start": "tsc & node ./build/serve.js"
+    "start": "tsc & node ./build/server.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "@types/mongoose": "^5.3.24",
     "@types/morgan": "^1.7.35",
     "@types/node": "^11.13.0",
+    "node-fetch": "^2.3.0",
     "nodemon": "^1.18.10",
     "typescript": "^3.4.1"
   }

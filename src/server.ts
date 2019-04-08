@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import helmet = require('helmet');
+import helmet from 'helmet';
 import mongoose from 'mongoose';
 import indexRoutes from './routes/indexRoutes';
 import compression from 'compression';

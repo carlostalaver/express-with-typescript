@@ -1,4 +1,4 @@
-import { Request, Response, Router, response } from "express";
+import { Request, Response, Router } from "express";
 import postModel from "../models/post";
 
 class PostRoutes {
@@ -47,7 +47,6 @@ class PostRoutes {
   }
 
   routes() {
-
     this.router.get("/", this.getPosts);
     this.router.get("/:url", this.getPost);
     this.router.post("/", this.createPost);
