@@ -26,7 +26,8 @@ class UserRoutes {
     }
     getUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = yield user_1.default.findOne({ username: req.body.username }, (err, user) => {
+            console.log('obteniendo un user dpor user name ', req.params.username);
+            const user = yield user_1.default.findOne({ username: req.params.username }, (err, user) => {
                 if (err)
                     console.log("Ocurrio un error ", err);
                 console.log("el post encontrado es ", user);

@@ -48,7 +48,6 @@ class Server {
     this.app.use(indexRoutes);  
     this.app.use('/api/posts',postRoutes)
     this.app.use('/api/user', userRoutes)
-
   }
 
   start() {

@@ -6,12 +6,10 @@ const UserSchema = new Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     username: { type: String, required: true },
-    posts: [
-      {
-        type: Schema.Types.ObjectId, // el tipo de dato referido post es de tipo Schema
-        ref: "Post"
-      }
-    ]
+    posts: [{
+      type: Schema.Types.ObjectId, // el tipo de dato referido post es de tipo Schema
+      ref: "Post"
+    }]
   },
   {
     timestamps: true

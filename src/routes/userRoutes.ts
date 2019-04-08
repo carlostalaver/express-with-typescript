@@ -14,8 +14,10 @@ class UserRoutes {
     res.json(users);
   }
 
-  async getUser(req: Request, res: Response): Promise<void> {
-    const user = await userModel.findOne({ username: req.body.username},
+  async getUser(req: Request, res: Response) {
+    console.log('obteniendo un user dpor user name ', req.params.username);
+    
+    const user = await userModel.findOne({ username: req.params.username},
       (err, user) => {
         if (err) console.log("Ocurrio un error ", err);
         console.log("el post encontrado es ", user);
